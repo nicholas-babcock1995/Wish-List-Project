@@ -1,7 +1,5 @@
 var addButtonEle = document.getElementById("add-btn");
-addButtonEle.setAttribute("onclick", "addToList()");
-
-
+addButtonEle.addEventListener("click", addToList);
 addButtonEle.style.width = "100%";
 
 function addToList(){
