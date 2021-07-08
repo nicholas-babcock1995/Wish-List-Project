@@ -1,0 +1,12 @@
+#title-container{
+    background-color: lightgray;
+    text-align: center;
+    
+    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#static-header{
+    text-align: flex-start;
+}

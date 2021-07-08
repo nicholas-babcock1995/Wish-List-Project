@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Destinations WishList
+    </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles-css/styles.css">
+</head>
+<body>
+    <div class="title-container container-fluid " id="title-container">
+        <h1>Vacation Destinations Wish List</h1>
+        <h4>Found exciting places to visit on your next vacation? Use the form below to add them to your wish list.</h2>
+    </div>
+
+    <div class="content-container container" id="content-container">
+        <div class="row">
+           <div class="col">
+            <form >
+                <div class="form-group">
+                  <label for="destination-input">Destination Name</label>
+                  <input type="text" class="form-control" id="destination-input" placeholder="Enter the name of the destination" required>
+                </div>
+                <div class="form-group">
+                  <label for="location-input">Location</label>
+                  <input type="text" class="form-control " id="location-input" placeholder="Where is it located?" required>
+                </div>
+                <div class="form-group">
+                    <label for="image-input">Photo</label>
+                    <input type="text" class="form-control" id="image-input" placeholder="Enter an image url of the place.">
+                  </div>
+                  <div class="form-group">
+                    <label for="description-input">Description</label>
+                    <input type="text" class="form-control" id="description-input" placeholder="Where is it located?" >
+                  </div>
+
+                  <div class="form-group">  <button type="button" class="btn btn-primary" id="add-btn">Add to list</button></div>
+                
+
+              </form>
+              
+           </div>
+           <div class="col" id = "card-holder">
+              <h4 id="static-header">My Wish List</h4>
+           </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="./my-script.js/my-script.js"></script>
+</body>
+</html>
