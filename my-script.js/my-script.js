@@ -7,20 +7,22 @@ function addToList(){
     //grab user input strings
     var destinationValue = document.getElementById("destination-input").value;
     var locationValue = document.getElementById("location-input").value;
-    var imgValue = document.getElementById("image-input").value;
+    
     var descriptionValue = document.getElementById("description-input").value;    
 
+    //create a request object
     //create necessary elements for new card item
     var newCardEle = document.createElement("div");
     newCardEle.setAttribute("class","card");
     newCardEle.setAttribute("style", "width: 18rem;");
 
-    var idString = destinationValue + locationValue + imgValue;
+    var idString = destinationValue + locationValue;
     newCardEle.setAttribute("id", idString );
   
     var newCardImg = document.createElement("img");
     newCardImg.setAttribute("class", "card-img-top");
-    newCardImg.setAttribute("src", imgValue);
+    newCardImg.setAttribute("id", "img-for-web");
+    makeRequest("https://api.unsplash.com/search/photos?client_id=39JKA_1P61cePfRtjOKCh8NSjwKJoXSCs-wN3AIWaPA&query=" + destinationValue, newCardImg);
     newCardImg.setAttribute("alt", "Card image cap");
     
 
@@ -65,7 +67,8 @@ function addToList(){
 
 
     //append the new elements into a suitable card format
-  
+
+    
     document.getElementById("card-holder").appendChild(newCardEle);
     newCardEle.appendChild(newCardImg);
     newDivCardEle.appendChild(newH5Ele);
@@ -79,7 +82,22 @@ function addToList(){
   
     document.getElementById("destination-input").value = "";
     document.getElementById("location-input").value = "";
-    document.getElementById("image-input").value = "";
+    
     document.getElementById("description-input").value = "";    
 
+}
+
+function makeRequest(URL, cardPic){
+    //key goes in the URL
+
+    fetch(URL)
+    .then(response => response.json())
+    .then(data=> createElements(data, cardPic));
+}
+
+function createElements(elts, cardPic){
+  
+   const imgURL =  elts.results[0].urls.regular;
+    console.log(imgURL);
+    cardPic.setAttribute("src", imgURL);
 }
